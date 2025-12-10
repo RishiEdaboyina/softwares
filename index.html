@@ -6,7 +6,6 @@
   <title>Aarya Softwares</title>
 
   <!-- FONTS -->
-  <!-- Added Rajdhani for the new tech look -->
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- ICONS (FontAwesome) -->
@@ -24,26 +23,14 @@
       --border-highlight: #ff0000;
     }
 
-    /* --- CUSTOM SCROLLBAR (PRO POLISH) --- */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #000; 
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--border-red); 
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--neon-red); 
-    }
+    /* --- CUSTOM SCROLLBAR --- */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: var(--border-red); border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--neon-red); }
 
-    /* --- TEXT SELECTION (PRO POLISH) --- */
-    ::selection {
-      background: var(--neon-red);
-      color: #000;
-    }
+    /* --- TEXT SELECTION --- */
+    ::selection { background: var(--neon-red); color: #000; }
 
     /* --- GENERAL SETUP --- */
     body {
@@ -55,8 +42,6 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      
-      /* Subtle Background Texture */
       background-image: 
         radial-gradient(circle at 50% 10%, rgba(50, 0, 0, 0.2), transparent 60%),
         linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
@@ -66,7 +51,7 @@
 
     /* --- NAVIGATION CONTAINER --- */
     .nav-wrapper {
-      background: rgba(0, 0, 0, 0.85); /* Slightly darker for readability */
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-red);
       position: sticky;
@@ -76,7 +61,6 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     }
 
-    /* Top Row: Utilities */
     .nav-top {
       display: flex;
       justify-content: center;
@@ -85,7 +69,7 @@
     }
 
     .nav-top a {
-      color: #fff; /* Reverted to White */
+      color: #fff;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 600;
@@ -109,11 +93,10 @@
     }
     
     .nav-top a:hover i {
-      transform: scale(1.2) rotate(5deg); /* Subtle icon animation */
+      transform: scale(1.2) rotate(5deg);
       text-shadow: 0 0 10px var(--neon-red);
     }
 
-    /* Separator */
     .nav-separator {
       width: 120px;
       height: 2px;
@@ -122,7 +105,6 @@
       opacity: 0.8;
     }
 
-    /* Bottom Row: Software Links */
     .nav-bottom {
       display: flex;
       justify-content: center;
@@ -141,7 +123,6 @@
       position: relative;
     }
 
-    /* Hover effect with underline for bottom nav */
     .nav-bottom a::after {
       content: '';
       position: absolute;
@@ -158,81 +139,54 @@
       text-shadow: 0 0 5px var(--neon-red);
     }
     
-    .nav-bottom a:hover::after {
-      width: 100%;
-    }
+    .nav-bottom a:hover::after { width: 100%; }
 
     /* --- HEADER SECTION --- */
     .header-section {
       display: flex;
       flex-direction: row;
-      justify-content: center; /* Center contents horizontally */
+      justify-content: center;
       align-items: center;
-      /* CORRECTION: Match padding and max-width to the .container grid for perfect alignment */
       padding: 60px 20px; 
       max-width: 1100px; 
-      margin: 0 auto; /* Center the header container */
+      margin: 0 auto;
       width: 100%;
       box-sizing: border-box;
-      gap: 40px; /* Add space between text and logo */
+      gap: 40px;
     }
 
-    /* Wrapper for text to keep it grouped */
     .header-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start; /* Align text block to the left */
-      text-align: left; /* Align text content to the left */
+      align-items: flex-start;
+      text-align: left;
     }
 
     .header-logo-link {
       display: inline-block;
       position: relative;
     }
-    
-    /* REMOVED: This pseudo-element was causing the unwanted transparent border effect */
-    /*
-    .header-logo-link::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.8) 100%); 
-      pointer-events: none;
-      border-radius: 8px;
-    }
-    */
 
     .header-image {
-      height: 140px; /* Large Logo */
+      height: 140px;
       width: auto;
       filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.3));
-      transition: transform 0.3s ease; /* Faster hover response */
+      transition: transform 0.3s ease;
       border-radius: 8px;
-      /* Added floating animation for "Hero" feel REMOVED */
-      /* animation: float 6s ease-in-out infinite; */
     }
     
-    .header-image:hover {
-      transform: scale(1.05); /* Simple scale, no rotation */
-      /* animation-play-state: paused; REMOVED */
-    }
+    .header-image:hover { transform: scale(1.05); }
 
     h1 {
-      /* Font Update: Rajdhani for a clean tech look */
       font-family: 'Rajdhani', sans-serif;
-      font-size: 3rem; /* Slightly larger for impact */
-      font-weight: 800; /* Thicker font weight */
+      font-size: 3rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
       margin: 0;
       line-height: 1;
       white-space: nowrap; 
-      
-      /* REVERTED STYLE: Pure Neon Red (No White) */
       color: var(--neon-red); 
       text-shadow: 
         0 0 10px var(--neon-red),    
@@ -241,25 +195,22 @@
     
     .subtitle {
       color: var(--text-main);
-      /* Font Update: Rajdhani matches the title */
       font-family: 'Rajdhani', sans-serif;
-      margin-top: 5px; /* Tighter spacing */
-      font-size: 1.2rem; /* Slightly adjusted for readability */
+      margin-top: 5px;
+      font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       opacity: 0.9;
-      
-      /* Align accent line to the left */
       padding-left: 12px;
       border-left: 3px solid var(--neon-red);
-      display: inline-block; /* Ensures it sits nicely below */
+      display: inline-block;
     }
 
     /* --- RESPONSIVE HEADER --- */
     @media (max-width: 768px) {
       .header-section {
-        flex-direction: column-reverse; /* Stack: Logo top, Text bottom on mobile */
+        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         gap: 30px;
@@ -271,10 +222,7 @@
         text-align: center;
       }
 
-      h1 {
-        white-space: normal; 
-        font-size: 2rem; 
-      }
+      h1 { white-space: normal; font-size: 2rem; }
 
       .subtitle {
         border-right: none;
@@ -294,7 +242,6 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px 60px 20px;
-      
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
@@ -303,7 +250,7 @@
 
     /* --- CARD --- */
     .card {
-      background: linear-gradient(145deg, var(--card-black), #0f0000); /* Slight gradient bg */
+      background: linear-gradient(145deg, var(--card-black), #0f0000);
       border: 1px solid var(--border-red);
       border-radius: 12px;
       padding: 25px;
@@ -311,12 +258,11 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 150px; 
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       overflow: hidden;
     }
 
-    /* Glass Shine Effect on Hover */
     .card::after {
       content: "";
       position: absolute;
@@ -324,16 +270,13 @@
       left: -100%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.1), transparent); /* Red tinted shine */
+      background: linear-gradient(to right, transparent, rgba(255, 0, 0, 0.1), transparent);
       transform: skewX(-25deg);
       transition: 0.5s;
       pointer-events: none;
     }
 
-    .card:hover::after {
-      left: 150%;
-    }
-
+    .card:hover::after { left: 150%; }
     .card-content { text-align: left; }
 
     .card h2 {
@@ -353,6 +296,34 @@
       line-height: 1.5;
       opacity: 0.8;
       transition: opacity 0.3s ease;
+    }
+
+    /* --- NEW STYLES: Red Links & Inline Password --- */
+    .red-link {
+      color: var(--neon-red);
+      text-decoration: underline;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .red-link:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    .adobe-pass {
+      background: transparent;
+      border: none;
+      /* Subtle underline to make it look like a field */
+      border-bottom: 1px solid rgba(77, 0, 0, 0.5);
+      color: var(--neon-red);
+      font-family: 'Orbitron', sans-serif;
+      width: 120px;
+      padding: 0 5px;
+      font-size: 0.85rem;
+      outline: none;
+      letter-spacing: 2px;
+      cursor: text;
     }
 
     .btn-container {
@@ -378,28 +349,17 @@
       align-items: center;
       gap: 5px;
     }
-    
     .btn i { font-size: 0.8em; } 
 
-    /* HOVER STATE: Reactor Glow */
     .card:hover { 
       transform: translateY(-5px); 
       border-color: var(--border-highlight);
-      /* Deep red glow from behind */
       box-shadow: 0 15px 35px rgba(20, 0, 0, 0.6); 
-      /* Subtle background shift to warmer dark red */
       background: linear-gradient(145deg, #1a0505, #0f0000);
     }
     
-    .card:hover h2 {
-      text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-    }
-
-    .card:hover p {
-      /* Removed color change, just slightly increased opacity */
-      opacity: 1;
-    }
-
+    .card:hover h2 { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); }
+    .card:hover p { opacity: 1; }
     .btn:hover {
       background: var(--neon-red);
       color: #000;
@@ -438,7 +398,6 @@
 
   <!-- NAVIGATION WRAPPER -->
   <div class="nav-wrapper">
-    
     <!-- Top Row: Utilities with Icons -->
     <div class="nav-top">
       <a href="index.html"><i class="fas fa-home"></i> Home</a>
@@ -459,7 +418,6 @@
       <a href="#">Final Cut</a>
       <a href="#">FL Studio</a>
     </div>
-
   </div>
 
   <!-- HEADER -->
@@ -479,11 +437,27 @@
   <!-- CONTENT GRID -->
   <div class="container">
     
-    <!-- 1 -->
+    <!-- 1: ADOBE SUITE (Updated) -->
     <div class="card">
       <div class="card-content">
         <h2>Adobe Suite</h2>
         <p>Full Creative Cloud collection including Premiere, AE & PS.</p>
+        
+        <!-- UPDATED INSTRUCTIONS SECTION -->
+        <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid rgba(77, 0, 0, 0.5);">
+          <!-- 7zip & WinRAR Links -->
+          <p style="font-size: 0.75rem; margin-bottom: 8px; color: #bbb;">
+            Use <a href="https://www.7-zip.org/" target="_blank" class="red-link">7zip</a> or 
+            <a href="https://www.win-rar.com/" target="_blank" class="red-link">WinRAR</a> to extract the folders.
+          </p>
+          
+          <!-- Password Field -->
+          <p style="font-size: 0.75rem; margin: 0; color: #bbb; display: flex; align-items: center; gap: 5px;">
+            Password: 
+            <input type="password" class="magic-password adobe-pass" value="aarya.aep" readonly>
+          </p>
+        </div>
+
       </div>
       <div class="btn-container">
         <a href="adobe.html" class="btn"><i class="fab fa-windows"></i> Windows</a>
@@ -554,6 +528,24 @@
   <footer>
     © 2025 Aarya Softwares — All Rights Reserved
   </footer>
+
+  <!-- SCRIPT FOR PASSWORD REVEAL -->
+  <script>
+    // Select all elements with the class 'magic-password'
+    const passwordInputs = document.querySelectorAll('.magic-password');
+
+    passwordInputs.forEach(input => {
+      // When mouse enters: Reveal
+      input.addEventListener('mouseenter', () => {
+        input.type = 'text';
+      });
+
+      // When mouse leaves: Hide
+      input.addEventListener('mouseleave', () => {
+        input.type = 'password';
+      });
+    });
+  </script>
 
 </body>
 </html>
